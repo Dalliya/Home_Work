@@ -13,10 +13,34 @@ y2 = int(input("Введите координаты центра второй о
 r2 = int(input("Введите радиус второй окружности:"))
 
 def circles_intersects(x1, y1, r1, x2, y2, r2):
-    return math.fabs(math.sqrt((x2 - x1)**2 + (y2 - y1)**2)) > (r1 + r2)
-    print("True")
+
+    d = math.fabs(math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2))
+
+    if d < (r1 + r2):
+        return print("Окружности пересекаются")
+
+    if x1==x2 and y1 == y2 and r1 == r2:
+        return print("Множество точек одной окружности совпадает со множеством другой")
+
+    if d == (r1 + r2):
+        return print("Окружности соприкасаются в одной точке")
+
+    if  x1 == x2 and y1 == y2 and r1 > r2 or r1 < r2:
+        return print("Одна окружность находится внутри другой")
+
+    else:
+        d > r1 + r2
+        return print("Окружности не пересекаются")
+
+
+
+
+#math.fabs(math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)) == 0
+
+#return math.fabs(math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)) == (r1 + r2)
 
 
 print(circles_intersects(x1, y1, r1, x2, y2, r2))
+#print("Окружности пересекаются")
 
 
