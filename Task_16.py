@@ -11,10 +11,10 @@ v2 = int(input("Введите скорость второго поезда:"))
 
 def have_trains_crashed(v1, v2):
     d = 10
-    safe_trains = 4
-    if v2 / v1 >= (d - safe_trains) / safe_trains:
+    exit_path = 4
+    if v2 / v1 >= (d - exit_path) / exit_path:
         return True #Поезда столкнутся
-
-    else: return False #Поезда не столкнутся
+    else:
+        return False #Поезда не столкнутся
 
 print(have_trains_crashed(v1, v2))
