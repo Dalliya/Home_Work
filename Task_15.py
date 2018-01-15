@@ -16,31 +16,19 @@ def circles_intersects(x1, y1, r1, x2, y2, r2):
 
     d = math.fabs(math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2))
 
-    if d < (r1 + r2):
-        return print("Окружности пересекаются")
+    if d == math.fabs(r1 - r2):
+        return True       #("Окружности соприкасаются в одной точке")
 
-    if x1==x2 and y1 == y2 and r1 == r2:
-        return print("Множество точек одной окружности совпадает со множеством другой")
+    if math.fabs(r1 - r2) < d < (r1 + r2):
+        return True      #("Окружности пересекаются в двух точках")
 
     if d == (r1 + r2):
-        return print("Окружности соприкасаются в одной точке")
+        return True      #("Окружности пересекаются в одной точке")
 
-    if  x1 == x2 and y1 == y2 and r1 > r2 or r1 < r2:
-        return print("Одна окружность находится внутри другой")
-
-    else:
-        d > r1 + r2
-        return print("Окружности не пересекаются")
-
-
-
-
-#math.fabs(math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)) == 0
-
-#return math.fabs(math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)) == (r1 + r2)
+    else: return False
 
 
 print(circles_intersects(x1, y1, r1, x2, y2, r2))
-#print("Окружности пересекаются")
+
 
 
