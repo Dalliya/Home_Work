@@ -5,17 +5,26 @@
 #a*(x**2) + b*x + c = 0
 
 import math
-a = int(input("Введите значение a = "))
-b = int(input("Введите значение b = "))
-c = int(input("Введите значение c = "))
+
+a = float(input("Введите значение a = "))
+b = float(input("Введите значение b = "))
+c = float(input("Введите значение c = "))
 
 def solve_quadratic_equation(a, b, c):
-    if (b**2 - 4*a*c) > 0:
-        result1 = (-b + math.sqrt(b**2 - 4*a*c)) / 2*a
-        result2 = (-b - math.sqrt(b**2 - 4*a*c)) / 2*a
+    D = b**2 - 4*a*c
+    if D > 0 and a != 0:
+        result1 = (-b + math.sqrt(D)) / (2 * a)
+        result2 = (-b - math.sqrt(D)) / (2 * a)
         return result1, result2
 
-result1, result2 = solve_quadratic_equation(a, b, c)
-print(result1, result2)
+    if D == 0:
+        result = -b / (2 * a)
+        return result, None
+
+    else:
+        return None, None
+
+print(solve_quadratic_equation(a, b, c))
+
 
 
