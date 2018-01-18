@@ -12,9 +12,7 @@ def sum_symbol_codes(first, last):
 	sum_total = 0
 	for i in range(ord(first), ord(last)+1):
 		sum_total += i
-		return sum_total
-
-#		print(sum_total)
+	return sum_total
 
 result = sum_symbol_codes(first, last)
 print(result)
