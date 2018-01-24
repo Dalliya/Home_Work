@@ -6,11 +6,18 @@ import random
 programm_choice = random.randint(1, 10)
 
 while True:
-    user_choice = int(input("Введите число:"))
+    user_choice = int(input("Введите число от 1 до 10:"))
+
     if user_choice == programm_choice:
         print("Вы угадали число")
         break
 
-    if user_choice != programm_choice:
+    valid_user_choice = 1 <= int(user_choice) <= 10
+
+    if not valid_user_choice:
+        print("Неверный ввод! Введите число от 1 до 10.")
+        continue
+
+    elif user_choice != programm_choice:
         print("Попробуйте еще раз")
 
