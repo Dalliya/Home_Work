@@ -18,6 +18,9 @@ while True:
         print("Неверный ввод! Введите число от 1 до 10.")
         continue
 
-    elif user_choice != programm_choice:
-        print("Попробуйте еще раз")
+    elif user_choice > programm_choice:
+        print("Попробуйте ввести число меньше")
+
+    elif user_choice < programm_choice:
+        print("Попробуйте ввести число больше")
 
